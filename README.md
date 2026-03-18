@@ -59,7 +59,7 @@ The application requires the following packages:
 
 ## Screenshot
 <p align="center">
-  <img src="docs/images/screen.png" width="320">
+  <img src="docs/images/screen.jpg" width="320">
 </p>
 
 ---
