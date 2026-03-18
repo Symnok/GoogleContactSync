@@ -1,36 +1,35 @@
-# GoogleContactSync
+# GmailCardDAVSync
 
-**GoogleContactSync** is an application for synchronizing **Google Contacts with Windows 10 Mobile (W10M) smartphones** using Google's **People API protocol**.
+**GmailCardDAVSync** is an application for synchronizing **Google Contacts with Windows 10 Mobile (W10M) smartphones** using the **CardDAV protocol**.
 
-The need for this application arose because built-in Google Mail client does bot support Google OAUTH2 anymore
+The need for this application arose because **PH Cloud CardDAV/CalDAV Sync [WM10]** stopped working with Google.
+
 ---
 
 ## Authentication
 
-To use the program, you must generate a **Google App Password**:
+1.Enable Google People API:
 
-https://myaccount.google.com/apppasswords
+Go to the Google Cloud Console. Create a new project (or select an existing one) https://console.cloud.google.com/projectcreate
 
-This application **does not require creating a Secret Key or Client ID in the Google Console**.
+Enable the "People API" for your project https://console.cloud.google.com/apis/api/people.googleapis.com/metrics?project=
+
+See https://cloud.google.com/endpoints/docs/openapi/enable-api if you have a problem to enable API
+
+Navigate to the API & Services Dashboard. Configure Consent Screen https://console.cloud.google.com/apis/credentials/consent?project= Define PeopleAPI scope as Contacts READ ONLY (second step of consent screen)
+
+2.Set Up OAuth 2.0 Credentials:
+
+In the API & Services Dashboard, go to "Credentials" https://console.cloud.google.com/apis/credentials?project= Create OAuth 2.0 Client ID credentials.
+
+Download the JSON file with your credentials and save it under the name client_secret.json
+
 
 ---
 
 ## Protocol Used
 
-The program uses **CardDAV** instead of the **Google People API**.
-
-Hopefully CardDAV support will remain available for some time.
-At the moment, **Google has not announced any plans to discontinue CardDAV access**.
-
----
-
-## Planned Features
-
-Future versions may include synchronization support for:
-
-* **Yandex Contacts**
-* **Yahoo Contacts**
-* **Apple iCloud Contacts**
+The program uses **People API** , not CardDAV
 
 ---
 
@@ -42,13 +41,7 @@ The application supports the following **Windows 10 Mobile builds**:
 * **1703**
 * **1709**
 
- Background task syncs contacts from Google to phone every 15 mins in addition to manual sync. **Phone to Google sync is manual**
-
----
-
-## Future WP8.1 Support
-
-Support for **Windows Phone 8.1 (WP8.1)** is planned, but it will be implemented as a **separate application**.
+ Background task syncs contacts from Google to phone every 15 mins in addition to manual sync.
 
 ---
 
@@ -62,28 +55,7 @@ The application requires the following packages:
 
 ---
 
-## Supported Contact Fields
-
-All major **Google contact fields** are supported, including:
-
-* Contact **avatar / photo**
-* **Multiple phone numbers**
-* **Multiple email addresses**
-
-### Known Limitation
-
-Currently, only one field is known **not to synchronize**:
-
-* `website`
-
----
-
 ## Notes
-
-* Synchronization works **directly via CardDAV**.
-* No Google Cloud project configuration is required.
-* Only a **Google App Password** is needed.
-* Background task syncs contacts from Google to phone every 15 mins in addition to manual sync. Phone to Google sync is manual
 
 ## Screenshot
 <p align="center">
