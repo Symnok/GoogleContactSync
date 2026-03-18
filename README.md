@@ -4,7 +4,10 @@
 
 The need for this application arose because built-in mail client does not sync contacts with Google anymore.
 
-The sync logic is taken from https://github.com/Computershik73/WPGContacts, I added one-directional sync and ability to load credentials json from local file
+Special credit to GitHub usr Computershik73 https://github.com/Computershik73 who created synchronization code and found the way to enable OAUTH2 authentication on W10M Lumias.
+
+The sync logic and OAUTH2 authentication logic is developed by Computershik73 from https://github.com/Computershik73/WPGContacts, I added one-directional sync and the ability to load credentials json from local file.
+You can use his app WPGContacts, it works without known issues.
 
 If you have a problem to create credentials in Google Console, use https://github.com/Symnok/GmailCardDAVSync (Contsact syncing using CardDAV) but CardDAV has some limitations if we are talking about Google Contacts
 
